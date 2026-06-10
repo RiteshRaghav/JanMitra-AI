@@ -1,0 +1,892 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+}
+
+/* ─── Dark Mode (default) ─── */
+:root {
+  --bg-base: #080d1a;
+  --bg-card: #0e1525;
+  --bg-surface: #131d2e;
+  --bg-input: rgba(8, 13, 26, 0.7);
+  --text-base: #cbd5e1;
+  --text-heading: #f1f5f9;
+  --text-muted: #64748b;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --teal: #14b8a6;
+  --teal-dark: #0f766e;
+  --teal-bright: #2dd4bf;
+  --amber: #f59e0b;
+  --amber-bright: #fbbf24;
+  --page-bg: #0A0F1D;
+  --header-bg: rgba(8, 13, 26, 0.85);
+  --sidebar-bg: #030712;
+  --chat-footer-bg: rgba(10, 15, 29, 0.65);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ─── Light Mode ─── */
+:root.light {
+  --bg-base: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-surface: #e8eef7;
+  --bg-input: #ffffff;
+  --text-base: #374151;
+  --text-heading: #0f172a;
+  --text-muted: #64748b;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.15);
+  --teal: #0d9488;
+  --teal-dark: #0f766e;
+  --teal-bright: #14b8a6;
+  --amber: #d97706;
+  --amber-bright: #f59e0b;
+  --page-bg: #f1f5f9;
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --sidebar-bg: #e8eef7;
+  --chat-footer-bg: rgba(241, 245, 249, 0.92);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--page-bg);
+  color: var(--text-base);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Force ALL dark utility backgrounds to use CSS var in light mode */
+html.light body,
+html.light #root {
+  background-color: var(--page-bg) !important;
+  color: var(--text-base) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ─── Glass ─── */
+.glass {
+  background: rgba(14, 21, 37, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-bright {
+  background: rgba(20, 30, 50, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-medium);
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+html.light .glass,
+html.light .glass-bright,
+html.light .glass-panel {
+  background: var(--bg-card) !important;
+  border-color: var(--border-subtle) !important;
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ─── Gradients ─── */
+.gradient-teal {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
+
+.gradient-teal-amber {
+  background: linear-gradient(135deg, #14b8a6 0%, #0f766e 50%, #d97706 100%);
+}
+
+.text-teal {
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-amber {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Orb ─── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* ─── Grid pattern ─── */
+.grid-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Cards ─── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s, background 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(20, 184, 166, 0.25);
+  box-shadow: 0 8px 32px -8px rgba(20, 184, 166, 0.12);
+  transform: translateY(-1px);
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  color: white;
+  font-weight: 700;
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px -4px rgba(15, 118, 110, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 28px -4px rgba(15, 118, 110, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-weight: 600;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card);
+  color: var(--text-heading);
+  border-color: var(--border-medium);
+}
+
+/* ─── Inputs ─── */
+.input {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text-heading);
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  border-color: rgba(20, 184, 166, 0.5);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.08);
+}
+
+.textarea {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text-heading);
+  font-size: 0.875rem;
+  transition: border-color 0.2s, background 0.3s;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.textarea:focus {
+  border-color: rgba(20, 184, 166, 0.5);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.08);
+}
+
+/* ─── Badge ─── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-teal {
+  background: rgba(20, 184, 166, 0.12);
+  color: #2dd4bf;
+  border: 1px solid rgba(20, 184, 166, 0.25);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.badge-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.badge-red {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ─── Label ─── */
+.label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+/* ─── Progress bar ─── */
+.progress-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0f766e, #14b8a6, #2dd4bf);
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light .progress-bar {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Stat card ─── */
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 20px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.3s;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #14b8a6, transparent);
+  opacity: 0.5;
+}
+
+/* ─── Chat bubbles ─── */
+.bubble-user {
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 16px;
+  max-width: 75%;
+  box-shadow: 0 4px 16px -4px rgba(15, 118, 110, 0.4);
+}
+
+.bubble-bot {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-base);
+  border-radius: 18px 18px 18px 4px;
+  padding: 12px 16px;
+  max-width: 80%;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+/* ─── Sidebar profile item ─── */
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(20, 184, 166, 0);
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.anim-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.wave-bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background: #14b8a6;
+  border-radius: 3px;
+  animation: wave 1.1s ease-in-out infinite;
+}
+
+.wave-bar:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.wave-bar:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.wave-bar:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.wave-bar:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+.pulse-mic {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ─── Tabs ─── */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 4px;
+  transition: background 0.3s;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+  color: white;
+  box-shadow: 0 2px 10px -2px rgba(15, 118, 110, 0.4);
+}
+
+.tab:not(.active):hover {
+  color: var(--text-heading);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+html.light .tab:not(.active):hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Hero section ─── */
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ─── Feature grid cards ─── */
+.feature-card {
+  padding: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.feature-card:hover {
+  background: rgba(20, 184, 166, 0.04);
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+html.light .feature-card {
+  background: var(--bg-card) !important;
+}
+
+html.light .feature-card:hover {
+  background: rgba(13, 148, 136, 0.04) !important;
+  border-color: rgba(13, 148, 136, 0.2) !important;
+}
+
+.feature-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #2dd4bf;
+}
+
+/* ─── Timeline ─── */
+.timeline-line {
+  border-left: 2px solid rgba(20, 184, 166, 0.2);
+  padding-left: 24px;
+  margin-left: 8px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -31px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid;
+  transition: transform 0.2s;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.3);
+}
+
+/* ─── Scheme card ─── */
+.scheme-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+/* ─── Admin panel ─── */
+.admin-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 24px;
+  transition: background 0.3s;
+}
+
+/* ─── Error / Success alerts ─── */
+.alert-error {
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  color: #f87171;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.alert-success {
+  padding: 12px 16px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 10px;
+  color: #4ade80;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ─── Navbar ─── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 16px -4px rgba(15, 118, 110, 0.5);
+  flex-shrink: 0;
+}
+
+/* ─── Page wrapper ─── */
+.page {
+  min-height: 100vh;
+  background: var(--page-bg);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+/* ─── Loading spinner ─── */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #14b8a6;
+  border-radius: 50%;
+  animation: spin-slow 0.7s linear infinite;
+}
+
+html.light .spinner {
+  border-color: rgba(0, 0, 0, 0.08);
+  border-top-color: #0d9488;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   COMPREHENSIVE LIGHT MODE OVERRIDES
+   These ensure ALL Tailwind hardcoded classes flip correctly
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Page backgrounds */
+html.light [class*="bg-\\[\\#0A0F1D\\]"],
+html.light [class*="bg-\\[#0A0F1D\\]"] {
+  background-color: var(--page-bg) !important;
+}
+
+html.light .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-\[\#0A0F1D\],
+html.light .bg-\[\#080d1a\] {
+  background-color: var(--page-bg) !important;
+}
+
+/* Cards / surface backgrounds */
+html.light .bg-slate-950\/60,
+html.light .bg-slate-900\/40,
+html.light .bg-slate-900\/35,
+html.light .bg-slate-900\/30,
+html.light .bg-slate-900\/20,
+html.light .bg-slate-950\/40,
+html.light .bg-slate-950\/30 {
+  background-color: var(--bg-card) !important;
+}
+
+html.light .bg-slate-900\/80,
+html.light .bg-\[\#0A0F1D\]\/80,
+html.light .bg-\[\#0A0F1D\]\/65,
+html.light .bg-\[\#0A0F1D\]\/50 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Teal tinted backgrounds */
+html.light .bg-brand-teal-700\/10,
+html.light .bg-brand-teal-500\/10,
+html.light .bg-brand-teal-600\/10,
+html.light .bg-brand-teal-700\/20 {
+  background-color: rgba(13, 148, 136, 0.08) !important;
+}
+
+html.light .bg-brand-amber-500\/10,
+html.light .bg-brand-amber-500\/5 {
+  background-color: rgba(245, 158, 11, 0.06) !important;
+}
+
+/* Header / footer backdrops */
+html.light header {
+  background-color: var(--header-bg) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+html.light footer {
+  background-color: var(--page-bg) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+/* Sidebar */
+html.light aside {
+  background-color: var(--sidebar-bg) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+/* Chat input footer */
+html.light section>footer {
+  background-color: var(--chat-footer-bg) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+/* Borders */
+html.light .border-slate-800,
+html.light .border-slate-850,
+html.light .border-slate-900,
+html.light [class*="border-slate-900/"],
+html.light [class*="border-slate-850/"],
+html.light [class*="border-slate-800/"] {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Texts */
+html.light .text-slate-100,
+html.light .text-slate-200,
+html.light .text-slate-250 {
+  color: var(--text-heading) !important;
+}
+
+html.light .text-slate-300,
+html.light .text-slate-400,
+html.light .text-slate-450,
+html.light .text-slate-500 {
+  color: var(--text-muted) !important;
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: var(--text-heading) !important;
+}
+
+/* Inputs */
+html.light input[type="text"],
+html.light input[type="tel"],
+html.light input[type="number"],
+html.light input[type="file"],
+html.light textarea,
+html.light .input,
+html.light .textarea {
+  background: var(--bg-input) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-heading) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light input:focus,
+html.light textarea:focus {
+  border-color: rgba(13, 148, 136, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.08) !important;
+}
+
+/* Chat bubbles in light mode */
+html.light .bubble-bot {
+  background: var(--bg-card) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-base) !important;
+}
+
+/* Section/div backgrounds inline */
+html.light section,
+html.light main {
+  color: var(--text-base) !important;
+}
+
+/* Gradient overlay fix in light mode */
+html.light .from-brand-teal-700\/10 {
+  --tw-gradient-from: rgba(13, 148, 136, 0.06) !important;
+}

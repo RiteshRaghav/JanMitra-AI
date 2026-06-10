@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: janmitra_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///workspace/janmitra.db
+    volumes:
+      - ./backend:/workspace/backend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: janmitra_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('janmitra_theme');
+        if (savedTheme === 'light') {
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+        }
+      })();
+    </script>
+    
+    <!-- SEO Best Practices Metadata -->
+    <title>JanMitra AI – Government Welfare Scheme Eligibility Assistant</title>
+    <meta name="description" content="JanMitra AI helps Indian citizens discover central and state government schemes they are eligible for through dynamic, voice-enabled, multilingual AI conversations." />
+    <meta name="keywords" content="government schemes, PM Kisan, PM Awas Yojana, Ayushman Bharat, eligibility checker, welfare assistant, Indian citizens benefits, digital governance, DigiLocker" />
+    <meta name="author" content="JanMitra AI Team" />
+    
+    <!-- Open Graph Metadata for Social Sharing -->
+    <meta property="og:title" content="JanMitra AI – Government Scheme Eligibility Assistant" />
+    <meta property="og:description" content="Discover government welfare schemes you qualify for in minutes. Dynamic assessment in Hindi, English, and Hinglish with voice-first assistance." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://localhost:5173/" />
+    
+  </head>
+  <body class="bg-[#0A0F1D] text-slate-100 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

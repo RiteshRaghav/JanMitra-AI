@@ -1,0 +1,382 @@
+[
+  {
+    "scheme_id": "pm_kisan",
+    "scheme_name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "state": "Central",
+    "eligibility_rules": {
+      "occupations": ["Farmer"],
+      "max_income": null,
+      "landholder": true,
+      "min_age": 18,
+      "max_age": 100,
+      "genders": ["Male", "Female", "Other"],
+      "states": [],
+      "social_categories": [],
+      "is_student": false,
+      "is_disabled": false,
+      "is_widow": null,
+      "is_senior_citizen": null,
+      "requires_own_house": null
+    },
+    "benefits": [
+      "Guaranteed income support of ₹6,000 per year paid in three equal installments of ₹2,000 directly into the bank accounts of farmers.",
+      "Access to credit card facilities (Kisan Credit Card) with subsidized interest rates."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Record / Land Ownership Certificate",
+      "Bank Passbook",
+      "Mobile Number linked with Aadhaar"
+    ],
+    "application_steps": [
+      "Visit the official PM-KISAN portal (pmkisan.gov.in).",
+      "Click on 'New Farmer Registration' and enter your Aadhaar Number and Captcha.",
+      "Select State, District, Block, and Village, then enter land details and upload land records.",
+      "Submit the form. State government authorities will verify and approve details.",
+      "Funds will be disbursed once verification is successful."
+    ],
+    "official_link": "https://pmkisan.gov.in/",
+    "faqs": [
+      {
+        "question": "Is there any income limit for PM Kisan?",
+        "answer": "No specific income limit, but institutional landholders, government employees, and income tax payers are excluded."
+      },
+      {
+        "question": "Can joint landholders apply?",
+        "answer": "Yes, joint landholders can also apply for the benefits proportionally as per government rules."
+      }
+    ]
+  },
+  {
+    "scheme_id": "ab_pmjay",
+    "scheme_name": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana",
+    "ministry": "Ministry of Health and Family Welfare",
+    "state": "Central",
+    "eligibility_rules": {
+      "occupations": [],
+      "max_income": 120000,
+      "landholder": null,
+      "min_age": 0,
+      "max_age": 120,
+      "genders": ["Male", "Female", "Other"],
+      "states": [],
+      "social_categories": [],
+      "is_student": null,
+      "is_disabled": null,
+      "is_widow": null,
+      "is_senior_citizen": null,
+      "requires_own_house": false
+    },
+    "benefits": [
+      "Cashless health cover of up to ₹5 Lakhs per family per year for secondary and tertiary care hospitalization.",
+      "Covers pre-existing conditions from day one of enrollment.",
+      "No restriction on family size, age, or gender."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "Ration Card (PHH or AAY)",
+      "Income Certificate (showing household income <= ₹1.2 Lakhs)",
+      "Caste Certificate (if applicable)"
+    ],
+    "application_steps": [
+      "Check eligibility on the PMJAY portal (mera.pmjay.gov.in) using your mobile number or Ration Card.",
+      "Visit an empanelled government or private hospital or a CSC center.",
+      "Present your Aadhaar Card and Ration Card to the Ayushman Mitra.",
+      "Get your Ayushman Golden Card generated after biometrics verification.",
+      "Avail cashless treatments directly at empanelled healthcare facilities."
+    ],
+    "official_link": "https://dashboard.pmjay.gov.in/",
+    "faqs": [
+      {
+        "question": "Does Ayushman Bharat cover private hospitals?",
+        "answer": "Yes, it covers cashless treatment in both empanelled public and private hospitals across India."
+      },
+      {
+        "question": "Is there a limit on family members?",
+        "answer": "No, all family members listed in the household database can use the card. There is no size limit."
+      }
+    ]
+  },
+  {
+    "scheme_id": "pmay_u",
+    "scheme_name": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "state": "Central",
+    "eligibility_rules": {
+      "occupations": [],
+      "max_income": 1800000,
+      "landholder": null,
+      "min_age": 18,
+      "max_age": 90,
+      "genders": ["Male", "Female", "Other"],
+      "states": [],
+      "social_categories": [],
+      "is_student": false,
+      "is_disabled": null,
+      "is_widow": null,
+      "is_senior_citizen": null,
+      "requires_own_house": false
+    },
+    "benefits": [
+      "Interest subsidy up to 6.5% on home loans under CLSS for EWS/LIG categories.",
+      "Financial assistance up to ₹1.5 Lakhs for construction of new houses or enhancement of existing ones.",
+      "Empowerment: The house must be owned or co-owned by a female head of the family."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "PAN Card",
+      "Income Certificate / Form 16 / Salary Slips",
+      "Affidavit stating that you do not own any pucca house anywhere in India",
+      "Bank Account Statement",
+      "Domicile Certificate"
+    ],
+    "application_steps": [
+      "Log in to the official PMAY portal (pmaymis.gov.in).",
+      "Select 'Citizen Assessment' and choose 'Benefit under other 3 components' or 'Slum Dwellers'.",
+      "Enter Aadhaar details and fill out the detailed application form containing income, family, and contact details.",
+      "Save the system-generated application number for tracking.",
+      "Wait for physical verification by local municipal authorities."
+    ],
+    "official_link": "https://pmaymis.gov.in/",
+    "faqs": [
+      {
+        "question": "Can I apply if my family owns a home in my native village?",
+        "answer": "No, the applicant and their family members must not own a pucca house in any part of India to be eligible."
+      }
+    ]
+  },
+  {
+    "scheme_id": "post_matric_scholarship",
+    "scheme_name": "Post Matric Scholarship for OBC / SC / ST Students",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "state": "Central",
+    "eligibility_rules": {
+      "occupations": ["Student"],
+      "max_income": 250000,
+      "landholder": null,
+      "min_age": 15,
+      "max_age": 30,
+      "genders": ["Male", "Female", "Other"],
+      "states": [],
+      "social_categories": ["SC", "ST", "OBC"],
+      "is_student": true,
+      "is_disabled": null,
+      "is_widow": null,
+      "is_senior_citizen": null,
+      "requires_own_house": null
+    },
+    "benefits": [
+      "100% reimbursement of compulsory non-refundable fees charged by educational institutions.",
+      "Monthly maintenance allowance ranging from ₹300 to ₹1,200 depending on course groups and hostel status."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "Student ID Card / Proof of Admission",
+      "Caste Certificate (issued by competent authority)",
+      "Income Certificate of parents (annual income <= ₹2.5 Lakhs)",
+      "Domicile Certificate",
+      "Marksheet of previous qualifying examination",
+      "Bank Passbook (linked with Aadhaar)"
+    ],
+    "application_steps": [
+      "Register on the National Scholarship Portal (scholarships.gov.in).",
+      "Complete registration and log in using the Student Application ID.",
+      "Fill out course, academic, and basic profiling details.",
+      "Upload scanned copies of required documents including Fee Receipt, Caste/Income certificates.",
+      "Submit and forward the digital copy to your school/college institute for verification."
+    ],
+    "official_link": "https://scholarships.gov.in/",
+    "faqs": [
+      {
+        "question": "Can general category students apply?",
+        "answer": "No, this scholarship is specifically for students belonging to SC, ST, and OBC categories. General category students with low income should explore EBC scholarships."
+      }
+    ]
+  },
+  {
+    "scheme_id": "ladli_behna",
+    "scheme_name": "Mukhyamantri Ladli Behna Yojana (MP)",
+    "ministry": "Women and Child Development Department, Madhya Pradesh",
+    "state": "Madhya Pradesh",
+    "eligibility_rules": {
+      "occupations": [],
+      "max_income": 250000,
+      "landholder": null,
+      "min_age": 21,
+      "max_age": 60,
+      "genders": ["Female"],
+      "states": ["Madhya Pradesh"],
+      "social_categories": [],
+      "is_student": false,
+      "is_disabled": null,
+      "is_widow": null,
+      "is_senior_citizen": null,
+      "requires_own_house": null
+    },
+    "benefits": [
+      "Monthly direct benefit transfer (DBT) of ₹1,250 into the beneficiary woman's bank account."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "Samagra ID (Family & Individual)",
+      "Bank Passbook (linked with Aadhaar & DBT enabled)",
+      "Domicile Certificate of Madhya Pradesh",
+      "Mobile number linked with Samagra"
+    ],
+    "application_steps": [
+      "Visit the designated Gram Panchayat / Ward Office or Camp in MP.",
+      "Get the application form printed out, fill in your Samagra ID and Aadhaar.",
+      "Provide biometrics at the registration counter setup by the municipal officials.",
+      "Get a printed acknowledgment receipt with a unique application ID.",
+      "Verify that your bank account has e-KYC and active DBT status."
+    ],
+    "official_link": "https://cmladlibahna.mp.gov.in/",
+    "faqs": [
+      {
+        "question": "Can unmarried women apply for Ladli Behna?",
+        "answer": "No, this scheme is currently only for married, widowed, divorced, or abandoned women aged 21-60."
+      }
+    ]
+  },
+  {
+    "scheme_id": "senior_citizen_pension",
+    "scheme_name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+    "ministry": "Ministry of Rural Development",
+    "state": "Central",
+    "eligibility_rules": {
+      "occupations": [],
+      "max_income": 100000,
+      "landholder": null,
+      "min_age": 60,
+      "max_age": 120,
+      "genders": ["Male", "Female", "Other"],
+      "states": [],
+      "social_categories": [],
+      "is_student": false,
+      "is_disabled": null,
+      "is_widow": null,
+      "is_senior_citizen": true,
+      "requires_own_house": null
+    },
+    "benefits": [
+      "Monthly pension of ₹200 for citizens aged 60-79 years.",
+      "Increased monthly pension of ₹500 for senior citizens aged 80 years and above.",
+      "States usually add matching contributions, bringing total pension up to ₹1,000 - ₹3,000 depending on the state."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "Age Proof (Birth Certificate or School Leaving Certificate)",
+      "BPL Card (Below Poverty Line) or Income Certificate",
+      "Bank Passbook",
+      "Passport Size Photograph"
+    ],
+    "application_steps": [
+      "Obtain the application form from the Social Welfare Department, Gram Panchayat, or Block Development Office.",
+      "Attach required documents, including age proof and BPL card verification.",
+      "Submit the application to the Gram Panchayat or Ward Office.",
+      "Social Welfare inspectors will verify eligibility through field visits.",
+      "Once approved, the pension is deposited monthly in the Aadhaar-linked bank account."
+    ],
+    "official_link": "https://nsap.nic.in/",
+    "faqs": [
+      {
+        "question": "Do I need a BPL card for IGNOAPS?",
+        "answer": "Yes, applicants must belong to a household living below the poverty line (BPL) to qualify under central guidelines."
+      }
+    ]
+  },
+  {
+    "scheme_id": "udyam_msme",
+    "scheme_name": "Udyam MSME Registration & Support Portal",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "state": "Central",
+    "eligibility_rules": {
+      "occupations": ["Business Owner", "Startup Founder"],
+      "max_income": null,
+      "landholder": null,
+      "min_age": 18,
+      "max_age": 100,
+      "genders": ["Male", "Female", "Other"],
+      "states": [],
+      "social_categories": [],
+      "is_student": false,
+      "is_disabled": null,
+      "is_widow": null,
+      "is_senior_citizen": null,
+      "requires_own_house": null
+    },
+    "benefits": [
+      "Free permanent registration number and digital certificate.",
+      "Collateral-free loans under CGTMSE and sub-vention on loan interest rates.",
+      "Exemption in government tenders, energy bills, and patent filing costs."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "PAN Card",
+      "GSTIN Number (for micro/small enterprises)",
+      "Bank Account details",
+      "Business Address details"
+    ],
+    "application_steps": [
+      "Go to the official Udyam Registration portal (udyamregistration.gov.in).",
+      "Enter Aadhaar number and name, click on Validate and Generate OTP.",
+      "Enter PAN card details and specify organization type.",
+      "Provide plant location, investment figures, and annual turnover details.",
+      "Submit the form and instantly download the Udyam Registration Certificate."
+    ],
+    "official_link": "https://udyamregistration.gov.in/",
+    "faqs": [
+      {
+        "question": "Is registration free?",
+        "answer": "Yes, government registration is completely free of charge. Do not pay any private portals."
+      }
+    ]
+  },
+  {
+    "scheme_id": "divyangjan_shadi",
+    "scheme_name": "Divyangjan Shadi Protsahan Yojana (UP)",
+    "ministry": "Empowerment of Persons with Disabilities Department, Uttar Pradesh",
+    "state": "Uttar Pradesh",
+    "eligibility_rules": {
+      "occupations": [],
+      "max_income": 200000,
+      "landholder": null,
+      "min_age": 18,
+      "max_age": 45,
+      "genders": ["Male", "Female", "Other"],
+      "states": ["Uttar Pradesh"],
+      "social_categories": [],
+      "is_student": null,
+      "is_disabled": true,
+      "is_widow": null,
+      "is_senior_citizen": null,
+      "requires_own_house": null
+    },
+    "benefits": [
+      "Financial incentive up to ₹35,000 for disabled couples upon marriage (₹15,000 if husband is disabled, ₹20,000 if wife is disabled, and ₹35,000 if both are disabled)."
+    ],
+    "required_documents": [
+      "Aadhaar Card",
+      "Disability Certificate (40% or more disability)",
+      "Marriage Certificate",
+      "Income Certificate (showing household income <= ₹2 Lakhs)",
+      "Domicile Certificate of Uttar Pradesh",
+      "Joint Bank Account Passbook"
+    ],
+    "application_steps": [
+      "Visit the UP Divyangjan Shadi portal (divyangjan.upsdc.gov.in).",
+      "Fill the online registration form within one year of marriage.",
+      "Upload Aadhaar, Marriage certificate, Domicile certificate, and Disability certificate.",
+      "Submit the hard copy along with documents to the District Disabled Welfare Office within 15 days.",
+      "Approved incentive is directly transferred to the joint bank account."
+    ],
+    "official_link": "http://divyangjan.upsdc.gov.in/",
+    "faqs": [
+      {
+        "question": "What is the minimum percentage of disability required?",
+        "answer": "The applicant must possess a valid Disability Certificate certifying at least 40% or higher disability."
+      }
+    ]
+  }
+]
